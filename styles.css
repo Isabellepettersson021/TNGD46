@@ -1,0 +1,378 @@
+/* FÖR HELA SIDAN */
+
+/* Bakgrundsfärg för hela sidan */
+html {
+    background-color: #222321;
+}
+
+/* Stilar för sidhuvudet */
+header {
+    grid-area: header; /* Placerar innehållet i "header" i container */ 
+    display: flex; 
+    align-items: center;
+}
+
+/* Stilar för logotypen */
+#Linje2-img {
+    width: 230px;
+    height: 130px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* Stilar för navigationsmenyn */
+nav {
+    grid-area: nav; /* Placerar innehållet i "nav" i container */
+    background-color: #222321;
+    padding-bottom: 20px; 
+    width: 100%; /* Täcker hela bredden av sidan */
+    text-align: center;
+}
+
+/* Stilar för länkar */
+a { 
+    font-family: "lato", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    text-decoration: none;
+    padding: 2vw;
+    color: #B26820;
+}
+
+
+/* Hover-effekt för länkar i navigationsmenyn: */
+.menu1 a:hover {
+    text-decoration: underline;
+}
+
+/* Stilar för huvudinnehållet */
+main {
+    grid-area: main; 
+    background-color: #fff;
+    height: auto;
+    width: 52vw;
+    padding-top: 2vw;
+    padding-right: 5vw;
+    padding-left: 5vw;
+    padding-bottom: 5vw;
+}
+
+/* Stilar för huvudbehållaren */
+.container {
+    grid-area: huvuddel; /* Placerar innehållet i området "huvuddel" i big-container */
+    display: grid; 
+    grid-template-columns: 100%; /* Här bestämmer vi att vi har en enda column som täcker hela bredden av container */
+    grid-template-rows: auto; /* Automatisk höjd för rader */ 
+    padding: 20px; /* Lägger till 20px padding inuti .container */
+    grid-template-areas: /* Definierar vart innehållet ska ligga i containern */ 
+    "header"
+    "nav"
+    "main"
+    "footer";
+    place-items: center; /* Centrerar innehållet i container vertikalt och horisontellt */
+    justify-items: center;
+}
+
+/* Stilar för sidfoten */
+.footer { 
+    grid-area: footer;
+    padding-top: 50px;
+    display: grid;  /* en grid i footern som delar in ul, sociala-medier och copytext*/ 
+    grid-template-columns: auto;
+    grid-template-areas: 
+    "ul sociala-medier"
+    "copytext copytext";
+    align-content: center;
+    justify-content: center;
+    }
+
+/* Stilar för copyright-text */
+.copytext {
+    grid-area: copytext; /* Placering  i footer*/
+    color: #fff;
+    font-family: "lato", sans-serif;
+    font-weight: 400;
+    font-size: small;
+    }
+
+/* Stilar för ul-lista */
+ul {
+    grid-area: ul; /* Placering  i footer*/
+    color: #fff;
+    font-family: "lato", sans-serif;
+    font-weight: 400;
+    font-size: small; 
+    list-style-type: none;
+}  
+
+/* Stilar för sociala medier-ikoner */
+.sociala-medier {
+    grid-area: sociala-medier; /* Placering  i footer*/
+}
+
+/* Stilar för rubriker */
+h1 {
+    font-family: "lato", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    margin-top: 0;
+}
+
+/* Stilar för styckes text */
+p {
+    font-family: "lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    max-width: 600px;
+}
+
+/* Stilar för hamburger-ikonen */
+.hamburger {
+    display: none;
+}
+
+/* Stilar för responsiv design när skärmbredden är max 1000px */
+@media only screen and (max-width: 1000px) {
+    .menu1 {
+        display: none; /* Dölj meny1 för små skärmar */
+    }
+
+    .hamburger {
+        display: block; /* Visa hamburgare för små skärmar */
+        font-size: 60px;
+        cursor: pointer;
+        background-color: #222321; /* Ändra färgen på hamburgerikonen */
+        color: #B26820; /* Ändra färgen på strecken i hamburgerikonen */
+    }
+
+    .menu2 {
+        display: block; /* Visa meny2 för små skärmar */
+        position: fixed; /* Fixera menyn i fönstret */
+        top: 0; /* Placera menyn längst upp */
+        left: 0; /* Placera menyn längst till vänster */
+        width: 100%; /* Bredden på menyn är 100% av fönstrets bredd */
+        height: 100%; /* Höjden på menyn är 100% av fönstrets höjd */
+        background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent bakgrundsfärg för att skapa en overlay-effekt */
+        z-index: 999; /* Sätt högt z-index för att säkerställa att menyn visas över allt annat innehåll */
+    }
+
+    .menu2 ul {
+        list-style-type: none; /* Ta bort punktlistan */
+        padding: 0;
+        margin: 0;
+        position: absolute; /* Absolut positionering inom .menu2 */
+        top: 50%; /* Placera listan vertikalt i mitten */
+        left: 50%; /* Placera listan horisontellt i mitten */
+        transform: translate(-50%, -50%); /* Centrera listan med hjälp av transform */
+        text-align: center; /* Centrera texten */
+    }
+
+    .menu2 li {
+        margin-bottom: 30px; /* Lägg till marginal mellan listelementen */
+    }
+}
+
+/* Dölj menyn som standard */
+.menu2 {
+    display: none;
+}
+
+/* Stilar för sociala medier-ikoner */
+.fa {
+    width: 15px;
+    text-align: center;
+    text-decoration: none;
+    padding: 15px;
+    border-radius: 50%;
+    margin: 0.5vw;
+}
+
+/* Stilar för sociala medier-ikoner vid hover */
+.fa:hover {
+    opacity: 0.7;
+}
+
+/* Stilar för Facebook-ikonen */
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+/* Stilar för Instagram-ikonen */
+.fa-instagram {
+    background: #B26820;
+    color: white;
+}
+
+/* INDEX-SIDAN */
+
+/* Stilar för gardinbilder */
+.gardin1 img {
+    grid-area: gardin1; /* Placerar bilden i området "gardin1" */
+    height: 140vh; /* Sätter höjden på bilden till 140% av viewportens höjd */
+    width: 20vw; /* Sätter höjden på bilden till 20% av viewportens bredd */
+    position: absolute; 
+    left: 0; /* Gör att innehållet placeras till vänster i diven */
+    z-index: 5; /* Placerar gardinerna överst */
+}
+
+.gardin2 img {
+    grid-area: gardin2; /* Placerar bilden i områden "gardin2" */
+    height: 140vh; /* Sätter höjden på bilden till 140% av viewportens höjd */
+    width: 20vw; /* Sätter höjden på bilden till 20% av viewportens bredd */
+    position: absolute; 
+    right: 0; /* Gör att innehållet placeras till höger i diven */
+    z-index: 5; /* Placerar gardinerna överst */
+}
+
+/* Responsiv design för indexsidan */
+@media screen and (max-width: 1000px) {
+    .gardin1, .gardin2 {
+        display:none; /* Dölj gardinbilder på små skärmar */
+    }
+
+    .stol {
+        display:none; /* Dölj stol på små skärmar */
+    }
+}
+
+/* Stilar för huvudinnehåll på indexsidan */
+.main5 {
+    grid-area: main; /* Placerar innehållet i "main" */
+    height: auto;
+    width: 80vw; 
+    background-color: #222321;
+    padding-top: 0px;
+}
+
+/* Justera position för stol */
+.stol {
+    margin-top:-180px;
+}
+
+/* OM-SIDAN */ 
+
+/* Stilar för filmrulle på om-sidan */
+#filmrulle {
+    padding-top: 5vh;
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
+
+/* Stilar för läs-mer-knapp på om-sidan */
+#mybuttonid { 
+    padding: 10px; 
+    font-size: 10px; 
+    font-weight: 300; 
+    color: rgb(255, 255, 255); 
+    border: none; 
+    border-radius: 80px; 
+    background-color: #B26820;  
+    margin-top: 20px; 
+}
+
+/* Stilar för gömd låda på om-sidan */
+.mybox1 {
+    display: none; 
+}
+
+/* FÖRSÄLJNINGS-SIDAN*/
+
+/* Stilar för huvudinnehåll på försäljningssidan */
+.main3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Delar upp main3 i två kolumner */
+    grid-template-areas: 
+        "titel titel"
+        "t-shirt poster"; 
+}
+
+/* Stilar för titel på försäljningssidan */
+.titel {
+    grid-area: titel;
+}
+
+/* Stilar för t-shirt på försäljningssidan */
+.t-shirt {
+    grid-area: t-shirt; /* Placerar .t-shirt i vänstra kolumnen */
+    padding-left: 20px;
+}
+
+/* Stilar för poster på försäljningssidan */
+.poster {
+    grid-area: poster; /* Placerar .poster i högra kolumnen */
+    padding-left: 20px;
+}
+
+/* Stilar för t-shirt-bilder */
+.t-shirt img {
+    width: 20vw;
+}
+
+/* Stilar för poster-bilder */
+.poster img {
+    width: 80%;
+}
+
+/* Stilar för h2-rubriker */
+h2 {
+    font-family: "lato", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* Responsiv design för försäljningssidan */
+@media screen and (max-width: 1000px) {
+
+    .main3 {
+        display: grid; 
+        grid-template-columns: auto; /* Endast en kolumn när skärmen är mindre än 1000px */
+        grid-template-areas: 
+            "titel"
+            "t-shirt" 
+            "poster"; 
+    }
+    
+    .titel {
+        grid-area: titel; 
+    }
+    
+    .t-shirt {
+        grid-area: t-shirt;
+    }
+    
+    .poster {
+        grid-area: poster; 
+    }
+} 
+
+/* Stilar för webbhandelsbilder */
+.webbhandel img {
+    width: 300px;
+}
+
+/* Stilar för köpknappar */
+.buybutton { 
+    padding: 15px;
+    border-radius: 50%;
+    margin: 0.4vw;
+    background-color: #ffffff;
+} 
+
+/* Stilar för dialogruta "lägg i varukorgen" */
+#addToCartAndClose {
+    background-color: #ffffff;
+}
+
+/* HITTA-HIT SIDAN */
+
+/* Stilar för karta */
+.karta {
+    width: 100%;
+}
+
+/* Stilar för text på hitta hit-sidan */
+.hittatext {
+    padding-left: 7vw ;
+    padding-right: 5vw;
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Försäljning </title>
+
+    <link href="styles.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://use.typekit.net/emp2rtv.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">   
+    <link rel="facebook" href="https://www.facebook.com/groups/norrkoping/about"> 
+    <link rel="instagram" href="https://www.instagram.com/malinfransson/"> 
+</head>
+
+<body> 
+    <div class="big-container">
+
+        <div class="container">
+        <header>
+
+            <button class="hamburger" onclick="toggleMenu()">&#9776;</button>
+            <div class="menu2">
+                <ul>
+                    <li><a href="index.html">HEM</a></li>
+                    <li><a href="om.html">OM FILMEN</a></li>
+                    <li><a href="forsaljning.html">FÖRSÄLJNING</a></li>
+                    <li><a href="hittahit.html">HITTA HIT</a></li>
+                </ul>
+            </div>
+
+            <div id="Linje2-img"><img src="Loggafilm.svg" alt="Logga Linje2 i gul text"></div>
+        </header>
+
+        <nav class="menu1"> 
+                <a href="index.html">HEM</a>
+                <a href="om.html">OM FILMEN</a>
+                <a href="forsaljning.html">FÖRSÄLJNING</a>
+                <a href="hittahit.html">HITTA HIT</a>
+        </nav>
+
+            <main class="main3">
+            <div class="titel"><h1>Webbhandel</h1></div>
+                    <div class="T-shirt"> 
+                        <h2> T-shirt </h2>
+                        <img src="t-shirt_hemsida.svg" alt="Försäljnings T-shirt"> 
+                        <p> 299kr</p>
+                        <button class="buybutton" onclick="showSizeDialog('T-shirt')">KÖP</button>
+                    </div>  
+
+                    <div class="poster"> 
+                        <h2> Poster</h2>
+                        <img src="poster_hemsida.svg" alt="Försäljnings-poster"> 
+                        <p> 249kr</p>
+                        <button class="buybutton" onclick="showSizeDialog('Poster')">KÖP</button>
+                    </div>
+
+                    <dialog id="sizeDialog">
+                        <form method="dialog">
+                            <label for="size">Välj storlek:</label>
+                            <select id="size">
+                                <option value="small">Small</option>
+                                <option value="medium">Medium</option>
+                                <option value="large">Large</option>
+                            </select>
+                            <button id="addToCartAndClose" onclick="addToCartAndClose()">Lägg i kundvagnen</button>
+                        </form>
+                    </dialog>
+                
+            </main>
+        </div>
+    </div>
+
+    <footer class="footer"> 
+        <p class="copytext"> 
+            &copy; Isabelle Pettersson, Malin Fransson & Sandra Alkner
+        </p>
+        
+        <p class="sociala-medier"> 
+            <a href="https://www.facebook.com/groups/norrkoping/about" class="fa fa-facebook"></a>
+            <a href="https://www.instagram.com/malinfransson/" class="fa fa-instagram"></a>
+        </p>
+
+        <ul> 
+            <li> Kontakt: </li>
+            <li> malissa@hotmail.com </li>
+            <li> +000 00 00 00 </li>
+        </ul>
+    </footer>
+   
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body> 
+</html>
